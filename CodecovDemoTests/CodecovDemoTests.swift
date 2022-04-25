@@ -18,14 +18,6 @@ class CodecovDemoTests: XCTestCase {
         XCTAssertEqual(result, "something")
     }
 
-    func testWithClosure() {
-        let array = [-3, 4, -2, 0, 1, -9]
-
-        let result = demo.withClosure(array: array)
-
-        XCTAssertEqual(result, [-3, -2, -9])
-    }
-
     func testNilCoalescing() {
         let str = "string"
 
