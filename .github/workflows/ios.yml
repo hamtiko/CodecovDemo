@@ -43,11 +43,11 @@ jobs:
           if [ $scheme = default ]; then scheme=$(cat default); fi
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-          rm -rf ./coverage/lcov.info
+          rm -rf lcov.info
           xcodebuild test-without-building -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -sdk iphonesimulator -destination "platform=$platform,name=$device" -enableCodeCoverage YES  -derivedDataPath ./build
           targetPath=`find ./build -name "CodecovDemo"`
           echo Found targetPath: $targetPath
           instrProfile=`find ./build -name "*.profdata"`
           echo Found profile: $instrProfile
-          xcrun llvm-cov export "$targetPath" -instr-profile=$instrProfile -ignore-filename-regex="SourcePackages|Pods|Carthage|nexus_frameworks|build" -format=lcov > ./coverage/lcov.info
-          ./codecov -v -n 'All Coverage' -f ./coverage/lcov.info
+          xcrun llvm-cov export "$targetPath" -instr-profile=$instrProfile -ignore-filename-regex="SourcePackages|Pods|Carthage|nexus_frameworks|build" -format=lcov > lcov.info
+          ./codecov -v -n 'All Coverage' -f lcov.info
