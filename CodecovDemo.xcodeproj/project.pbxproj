@@ -15,6 +15,8 @@
 		989D18E62816881E002AEE7C /* CodecovDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989D18E52816881E002AEE7C /* CodecovDemoUITests.swift */; };
 		989D18E82816881E002AEE7C /* CodecovDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989D18E72816881E002AEE7C /* CodecovDemoUITestsLaunchTests.swift */; };
 		989D1A8B28168A3C002AEE7C /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989D1A8A28168A3C002AEE7C /* Demo.swift */; };
+		98E0E26E28759EE200C3FDF3 /* NewCoveredClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E0E26D28759EE200C3FDF3 /* NewCoveredClass.swift */; };
+		98E0E27028759F4600C3FDF3 /* NewCoveredClassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E0E26F28759F4600C3FDF3 /* NewCoveredClassTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		989D18E52816881E002AEE7C /* CodecovDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodecovDemoUITests.swift; sourceTree = "<group>"; };
 		989D18E72816881E002AEE7C /* CodecovDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodecovDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		989D1A8A28168A3C002AEE7C /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
+		98E0E26D28759EE200C3FDF3 /* NewCoveredClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCoveredClass.swift; sourceTree = "<group>"; };
+		98E0E26F28759F4600C3FDF3 /* NewCoveredClassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCoveredClassTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 				989D18CE2816881E002AEE7C /* Assets.xcassets */,
 				989D18D02816881E002AEE7C /* Preview Content */,
 				989D1A8A28168A3C002AEE7C /* Demo.swift */,
+				98E0E26D28759EE200C3FDF3 /* NewCoveredClass.swift */,
 			);
 			path = CodecovDemo;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				989D18DB2816881E002AEE7C /* CodecovDemoTests.swift */,
+				98E0E26F28759F4600C3FDF3 /* NewCoveredClassTests.swift */,
 			);
 			path = CodecovDemoTests;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98E0E26E28759EE200C3FDF3 /* NewCoveredClass.swift in Sources */,
 				989D18CD2816881D002AEE7C /* ContentView.swift in Sources */,
 				989D18CB2816881D002AEE7C /* CodecovDemoApp.swift in Sources */,
 				989D1A8B28168A3C002AEE7C /* Demo.swift in Sources */,
@@ -270,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98E0E27028759F4600C3FDF3 /* NewCoveredClassTests.swift in Sources */,
 				989D18DC2816881E002AEE7C /* CodecovDemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
