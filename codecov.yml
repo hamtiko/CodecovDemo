@@ -12,10 +12,10 @@ codecov:
 
 coverage:
   status:
-    project:
-      default:
-        target: 80%   # the required coverage value
-        threshold: 0.03%  # the leniency in hitting the target
+    # project:
+    #   default:
+    #     target: 80%   # the required coverage value
+    #     threshold: 0.03%  # the leniency in hitting the target
     patch:
       default:
         threshold: 0.03%
