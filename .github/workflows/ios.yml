@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     name: Build and Test default scheme using any available iPhone simulator
-    runs-on: macos-latest
+    runs-on: macos-12
 
     steps:
       - name: Checkout
@@ -32,7 +32,7 @@ jobs:
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
           rm -rf ./build
-          xcodebuild build-for-testing -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -sdk iphonesimulator -destination "platform=$platform,OS=15.2,name=$device" -derivedDataPath ./build
+          xcodebuild build-for-testing -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -sdk iphonesimulator -destination "platform=$platform,name=$device" -derivedDataPath ./build
       - name: Test
         env:
           scheme: ${{ 'default' }}
@@ -44,7 +44,7 @@ jobs:
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
           rm -rf ./coverage/lcov.info
-          xcodebuild test-without-building -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -sdk iphonesimulator -destination "platform=$platform,OS=15.2,name=$device" -enableCodeCoverage YES  -derivedDataPath ./build
+          xcodebuild test-without-building -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -sdk iphonesimulator -destination "platform=$platform,name=$device" -enableCodeCoverage YES  -derivedDataPath ./build
           targetPath=`find ./build -name "CodecovDemo"`
           echo Found targetPath: $targetPath
           instrProfile=`find ./build -name "*.profdata"`
