@@ -26,4 +26,13 @@ class NewCoveredClassTests: XCTestCase {
 
         XCTAssertEqual(result, "HeLLO")
     }
+
+    func testcase_str_short() {
+        let sut = NewCoveredClass()
+
+        let result = sut.case_str("He")
+
+        XCTAssertEqual(result, "he")
+    }
+
 }

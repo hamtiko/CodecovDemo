@@ -20,16 +20,13 @@ class NewCoveredClass {
         {
             return input.lowercased()
         }
-        else
-        {
-            var newInput = input
-            var str1: String = ""
-            let lastThree = newInput.suffix(3)
-            newInput.removeLast(3)
-            _ = String(lastThree).uppercased()
-            str1.append(contentsOf: newInput)
-            str1.append(String(lastThree).uppercased())
-            return str1
-        }
+        var newInput = input
+        var str1: String = ""
+        let lastThree = newInput.suffix(3)
+        newInput.removeLast(3)
+        _ = String(lastThree).uppercased()
+        str1.append(contentsOf: newInput)
+        str1.append(String(lastThree).uppercased())
+        return str1
     }
 }
