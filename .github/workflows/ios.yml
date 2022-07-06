@@ -49,4 +49,4 @@ jobs:
           instrProfile=`find ./build -name "*.profdata"`
           echo Found profile: $instrProfile
           xcrun llvm-cov export "$targetPath" -instr-profile=$instrProfile -ignore-filename-regex="SourcePackages|Pods|Carthage|nexus_frameworks|build" -format=lcov > ./coverage/lcov.info
-          ./codecov -v -t ${codecovToken} -n 'All Coverage' -f ./coverage/lcov.info
+          ./codecov -v -n 'All Coverage' -f ./coverage/lcov.info
